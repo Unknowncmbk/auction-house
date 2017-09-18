@@ -71,4 +71,19 @@ public class AuctionManager {
 		
 		return Optional.empty();
 	}
+	
+	/**
+	 * Get the specified auction item from this manager.
+	 * 
+	 * @param item - the item to get
+	 * 
+	 * @return The auction item that was retrieved, if one was found.
+	 */
+	public Optional<AuctionItem> getItem(AuctionItem item){
+		if (idToItem.containsKey(item.getID())){
+			return Optional.of(idToItem.get(item.getID()));
+		}
+		
+		return Optional.empty();
+	}
 }
