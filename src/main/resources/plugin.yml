@@ -1,0 +1,5 @@
+name: AuctionHouse
+main: me.sbahr.auctionhouse.AuctionHouse
+author: Stephen Bahr
+version: 0.0.1-SNAPSHOT
+website: http://sbahr.me
