@@ -6,17 +6,13 @@ import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
@@ -97,28 +93,6 @@ public class AuctionMenu implements Listener {
 
 					if (success) {
 						player.closeInventory();
-					}
-				}
-			}
-		}
-	}
-
-	// TODO remove
-	@EventHandler
-	public void onPlayerInteract(PlayerInteractEvent event) {
-		ItemStack is = event.getItem();
-		if (is != null && is.getType() == Material.DIAMOND) {
-
-			if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-
-				if (event.getHand() == EquipmentSlot.HAND) {
-
-					Inventory inven = AuctionManager.getInstance().getPage(1).orElse(null);
-					if (inven != null) {
-						event.getPlayer().openInventory(inven);
-					}
-					else {
-						AuctionManager.getInstance().createPages();
 					}
 				}
 			}
