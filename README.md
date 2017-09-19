@@ -20,4 +20,16 @@ Copy/paste the [database schema](https://github.com/Unknowncmbk/auction-house/bl
 Once this is done, restart your server again.
 
 ## Results
+Players can use the following commands:
+- `/bal`: Checks the player's balance.
+- `/auctionhouse`: Opens the auction house.
+
+If the player opens the Auction House menu, this is an example GUI that they will see:
+- ![alt text](https://github.com/Unknowncmbk/auction-house/blob/master/img/auction_menu.png "Auction Main Menu")
+
+If the player wishes to add a new auction to the Auction House, they can use the builder:
+- ![alt text](https://github.com/Unknowncmbk/auction-house/blob/master/img/create_offer.png "Auction Builder")
+
+If the player wishes to change their offer type, this is an example of the BUY offer:
+- ![alt text](https://github.com/Unknowncmbk/auction-house/blob/master/img/auction_type.png "Buy Offer")
 
