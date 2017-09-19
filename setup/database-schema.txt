@@ -1,0 +1,35 @@
+/*****
+** Table Description:
+** Represents auction items that are stored in the database.
+** 
+** Reasoning for structure:
+** PK is the `entry` field, as it's a key lookup.
+*****/
+CREATE TABLE IF NOT EXISTS auction_item(
+id INT NOT NULL AUTO_INCREMENT, 
+uuid BINARY(16) NOT NULL, 
+auction_type VARCHAR(30) NOT NULL, 
+value TEXT NOT NULL, 
+amount INT NOT NULL, 
+price INT NOT NULL, 
+expired TIMESTAMP NOT NULL,
+PRIMARY KEY (id)
+);
+
+/*****
+** Table Description:
+** Represents transactions that need to be processed when a user logs in.
+** 
+** Reasoning for structure:
+** PK is the `id` field, as it's used to delete the transaction.
+*****/
+CREATE TABLE IF NOT EXISTS user_state_transaction (
+id INT(11) NOT NULL AUTO_INCREMENT,
+uuid BINARY(16) NOT NULL,
+payload TEXT CHARACTER SET utf8 NOT NULL,
+creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+process_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+processed TINYINT(1) NOT NULL DEFAULT '0',
+PRIMARY KEY (`id`), 
+INDEX(uuid)
+);

@@ -22,7 +22,7 @@ public class AuctionItemTest {
 		AuctionItem ai = new AuctionItem(1, null, null, null, 0, 0, 0);
 		AuctionManager.getInstance().addItem(ai);
 		
-		assertEquals(true, AuctionManager.getInstance().getItem(ai).isPresent());
+		assertEquals(true, AuctionManager.getInstance().getItem(ai.getID()).isPresent());
 	}
 
 }

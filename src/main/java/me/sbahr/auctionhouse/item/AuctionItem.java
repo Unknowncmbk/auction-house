@@ -7,7 +7,7 @@ import org.bukkit.inventory.ItemStack;
 public class AuctionItem {
 	
 	/** The id of the auction item */
-	private final int id;
+	private int id;
 	/** The uuid of the owner of this auction item */
 	private final UUID owner;
 	/** The type of auction */
@@ -51,6 +51,15 @@ public class AuctionItem {
 	 */
 	public int getID() {
 		return id;
+	}
+	
+	/**
+	 * Set the ID for this auction item.
+	 * 
+	 * @param id - the new id
+	 */
+	public void setID(int id){
+		this.id = id;
 	}
 
 	/**
